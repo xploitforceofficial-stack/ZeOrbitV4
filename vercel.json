@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/loader/ZeOrbit",
-      "destination": "/api/ZeOrbit"
-    }
-  ]
-}
