@@ -1,19 +1,25 @@
-// api/script.js
 export default function handler(req, res) {
     const userAgent = req.headers['user-agent'] || '';
 
-    // Cek apakah yang mengakses adalah Browser (biasanya ada string "Mozilla")
-    if (userAgent.includes('Mozilla') || userAgent.includes('Chrome')) {
-        res.status(403).send(`
+    // Deteksi Browser (Mozilla/Chrome/Safari dll)
+    if (userAgent.includes('Mozilla') || userAgent.includes('Chrome') || userAgent.includes('Safari')) {
+        res.status(404).send(`
+            <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
             <html>
-                <body style="background:#000;color:white;font-family:sans-serif;text-align:center;padding-top:100px;">
-                    <h1>403 Forbidden</h1>
-                    <p>Access Denied: fuck you.</p>
-                </body>
+                <head>
+                    <title>404 Not Found</title>
+                </head>
+                <body style="font-family: Arial, Helvetica, sans-serif; text-align: center; margin-top: 50px;">
+                    <h1>Not Found</h1>
+                    <p>The requested URL was not found on this server.</p>
+                    <hr>
+                    <address>Apache/2.4.41 (Ubuntu) Server at Port 443</address>
+                    </body>
             </html>
         `);
     } else {
-        // Jika diakses lewat eksekutor (HttpGet), arahkan ke script asli
+        // Jika diakses lewat executor (Roblox HttpGet), kirim script asli
+        // Menggunakan redirect agar beban trafik langsung ke GitHub
         res.redirect('https://raw.githubusercontent.com/xploitforceofficial-stack/zeorbitv42/refs/heads/main/obfuscated_script-1770792805723.lua');
     }
 }
