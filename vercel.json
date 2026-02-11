@@ -1,0 +1,13 @@
+{
+  "functions": {
+    "loader/*.js": {
+      "runtime": "vercel-nodejs@latest"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/loader/(.*)",
+      "destination": "/loader/$1"
+    }
+  ]
+}
