@@ -1,13 +1,8 @@
 {
-  "functions": {
-    "loader/*.js": {
-      "runtime": "nodejs20.x"
-    }
-  },
   "rewrites": [
     {
-      "source": "/loader/(.*)",
-      "destination": "/loader/$1"
+      "source": "/loader/ZeOrbit",
+      "destination": "/api/ZeOrbit"
     }
   ]
 }
