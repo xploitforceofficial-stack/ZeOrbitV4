@@ -1,7 +1,7 @@
 {
   "functions": {
     "loader/*.js": {
-      "runtime": "vercel-nodejs@latest"
+      "runtime": "nodejs20.x"
     }
   },
   "rewrites": [
